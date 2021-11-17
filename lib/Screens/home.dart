@@ -1,4 +1,5 @@
 import 'package:firstapp/Services/auth.dart';
+import 'package:firstapp/authenticate/main_auth_screen.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
@@ -19,6 +20,8 @@ class Home extends StatelessWidget {
               label: Text('logout'),
               onPressed: () async {
                 await _auth.signOut();
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Authentication()));
               },
             ),
           ],

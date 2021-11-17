@@ -1,9 +1,10 @@
+import 'package:firstapp/Screens/google_map.dart';
 import 'package:firstapp/Services/auth.dart';
 import 'package:flutter/material.dart';
 
 class Register extends StatefulWidget {
-  final Function toggleView;
-  Register({required this.toggleView});
+  // final Function toggleView;
+  // Register({required this.toggleView});
 
   @override
   _RegisterState createState() => _RegisterState();
@@ -15,6 +16,23 @@ class _RegisterState extends State<Register> {
   // text field state
   String email = '';
   String password = '';
+  String error = '';
+
+  void validate() {
+    if (!email.contains('@') || password.length < 6) {
+      setState(() {
+        error = 'Either email or Password is incorrect';
+      });
+    } else {
+      AuthService().registerAnewUser(email, password);
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => MapScreen(),
+        ),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +46,8 @@ class _RegisterState extends State<Register> {
           FlatButton.icon(
             icon: Icon(Icons.person),
             label: Text('Sign In'),
-            onPressed: () => widget.toggleView(),
+            // onPressed: () => widget.toggleView(),
+            onPressed: () {},
           ),
         ],
       ),
@@ -52,15 +71,19 @@ class _RegisterState extends State<Register> {
               ),
               SizedBox(height: 20.0),
               RaisedButton(
-                  color: Colors.pink[400],
-                  child: Text(
-                    'Register',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  onPressed: () async {
-                    print(email);
-                    print(password);
-                  }),
+                color: Colors.pink[400],
+                child: Text(
+                  'Register',
+                  style: TextStyle(color: Colors.white),
+                ),
+                onPressed: validate,
+              ),
+              Text(
+                error,
+                style: TextStyle(
+                  color: Colors.red,
+                ),
+              ),
             ],
           ),
         ),

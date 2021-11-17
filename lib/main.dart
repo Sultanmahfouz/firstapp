@@ -1,5 +1,5 @@
 import 'dart:ffi';
-import 'package:firstapp/Screens/Wrapper.dart';
+import 'package:firstapp/Screens/wrapper.dart';
 import 'package:firstapp/Services/auth.dart';
 import 'package:firstapp/models/user.dart';
 import 'package:flutter/cupertino.dart';
@@ -46,11 +46,13 @@ class SplashPage extends StatelessWidget {
     });
 
     return Scaffold(
-        body: Container(
-            color: Color(0xFF0C038),
-            alignment: Alignment.center,
-            child: Image(
-              image: AssetImage('Assets/images/logo.png'),
-            )));
+      body: Container(
+        color: Color(0xFF0C038),
+        alignment: Alignment.center,
+        child: Image(
+          image: AssetImage('Assets/images/logo.png'),
+        ),
+      ),
+    );
   }
 }
