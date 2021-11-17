@@ -15,6 +15,7 @@ class _SignInState extends State<SignIn> {
   String password = '';
   String error = '';
 
+// validate sign in method
   void validateSignIn() async {
     if (email.contains('@') && password.length > 6) {
       final user =
