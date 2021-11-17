@@ -1,7 +1,5 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firstapp/Services/auth.dart';
 import 'package:flutter/material.dart';
-import 'package:firstapp/code_assets/color.dart';
 
 class SignIn extends StatefulWidget {
   final Function toggleView;

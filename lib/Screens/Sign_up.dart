@@ -10,7 +10,7 @@ class Register extends StatefulWidget {
 }
 
 class _RegisterState extends State<Register> {
-  final AuthService _auth = AuthService();
+  // final AuthService _auth = AuthService();
 
   // text field state
   String email = '';

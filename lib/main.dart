@@ -6,19 +6,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
-import 'authenticate/authentication_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: SplashPage(
-        duration: 3,
-        goToPage: Wrapper(),
-      )));
+  runApp(Myapp());
 }
 
 class Myapp extends StatelessWidget {
@@ -28,15 +22,19 @@ class Myapp extends StatelessWidget {
       value: AuthService().user,
       initialData: null,
       child: MaterialApp(
-        home: Wrapper(),
+        debugShowCheckedModeBanner: false,
+        home: SplashPage(
+          duration: 3,
+          goToPage: Wrapper(),
+        ),
       ),
     );
   }
 }
 
 class SplashPage extends StatelessWidget {
-  int duration = 0;
-  Widget goToPage;
+  final int duration;
+  final Widget goToPage;
 
   SplashPage({required this.goToPage, required this.duration});
 

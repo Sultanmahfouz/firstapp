@@ -1,7 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firstapp/models/user.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:firstapp/Services/auth.dart';
 
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -28,6 +26,7 @@ class AuthService {
       return null;
     }
   }
+
 // sign in with email and password
 
 //registering with email and password

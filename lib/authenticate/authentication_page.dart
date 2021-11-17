@@ -1,11 +1,7 @@
-import 'package:firstapp/Screens/Sign_up.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
-import 'Sign_in.dart';
-import 'package:firstapp/code_assets/color.dart';
-import 'package:firstapp/Screens/authenticate.dart';
 
 class Authentication extends StatelessWidget {
   @override
@@ -16,12 +12,14 @@ class Authentication extends StatelessWidget {
       child: Stack(
         children: [
           Positioned.fill(
-              child: Opacity(
-                  opacity: 0.4,
-                  child: Image.asset(
-                    'Assets/images/map.jpg',
-                    fit: BoxFit.cover,
-                  ))),
+            child: Opacity(
+              opacity: 0.4,
+              child: Image.asset(
+                'Assets/images/map.jpg',
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
           Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -61,10 +59,12 @@ class Authentication extends StatelessWidget {
                   padding: const EdgeInsets.all(20),
                   child: FlatButton(
                       onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => Register()));
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(
+                        //     builder: (context) => Mapp(),
+                        //   ),
+                        // );
                       },
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(50)),
@@ -92,10 +92,11 @@ class Authentication extends StatelessWidget {
                         splashColor: Color(0xFF1BB1DE).withOpacity(0.2),
                         highlightColor: Color(0xFF1BB1DE).withOpacity(0.2),
                         onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => SignIn()));
+                          // Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //       builder: (context) => SignIn(),
+                          //     ));
                         },
                         child: Container(
                           padding: EdgeInsets.all(20),
